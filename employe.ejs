@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel="stylesheet" href="bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+        <form method="post" action="/add">
+            Matricule:<input type="number" name="mat" class="form-control">
+            Nom:<input type="text" name="nom" class="form-control">
+            Salaire:<input type="number" name="sal" class="form-control">
+            <input type="submit" value="ADD" class="btn btn-success">
+            
+        </form>    
+        <h2>List des Employés</h2>
+        <table class="table table-stiped">
+        <tr><th>Matricule</th><th>Nom</th><th>Salaire</th></tr>
+           <% emps.forEach((item)=>{ %> 
+            <tr>
+                <td><%=item.id%></td>
+                <td><%=item.nom%></td>
+                <td><%=item.sal%></td>
+                <td><a href="/delete/<%=item.id%>">Delete</a></td>
+            </tr>    
+           <%});%>     
+       
+    </table>    
+    </div> 
+    </body> 
+</html>
